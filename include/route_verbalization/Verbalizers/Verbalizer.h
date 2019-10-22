@@ -17,7 +17,10 @@ public:
 
   bool regionRoute(std::vector<std::string> route, std::string start_place, std::string& text)
   {
-    return region_verbalizer.verbalizeRegionRoute(route, start_place, text);
+    onto_.actions.setLang("fi");
+    bool res = region_verbalizer.verbalizeRegionRoute(route, start_place, text);
+    onto_.actions.setLang("en");
+    return res;
   }
 
   bool placeRoute(std::vector<std::string> route, std::string start_place, std::string goal_shop, std::string& text)
