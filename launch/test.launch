@@ -1,6 +1,6 @@
 <launch>
 
-  <node name="route_verbalization" pkg="route_verbalization" type="verbalize_route" output="screen"> </node>
-  <node name="test_verbalization" pkg="route_verbalization" type="verbalize_test" output="screen"> </node>
+  <node name="route_verbalization_fi" pkg="route_verbalization_fi" type="verbalize_route_fi" output="screen"> </node>
+  <node name="test_verbalization_fi" pkg="route_verbalization_fi" type="verbalize_test_fi" output="screen"> </node>
 
 </launch>

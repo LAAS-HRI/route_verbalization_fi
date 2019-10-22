@@ -13,6 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
   ontologenius
   message_generation
   semantic_route_description
+  dialogue_translator
 )
 find_package(ontologenius 0.1.3 REQUIRED)
 find_package(OpenCV REQUIRED)
@@ -83,16 +84,16 @@ add_executable(verbalize_route_fi nodes/verbalize.cpp)
 target_link_libraries(verbalize_route_fi ${catkin_LIBRARIES})
 add_dependencies(verbalize_route_fi ${catkin_EXPORTED_TARGETS})
 add_dependencies(verbalize_route_fi route_verbalization_gencpp)
-target_link_libraries(verbalize_route_fi route_verbalization_lib)
+target_link_libraries(verbalize_route_fi route_verbalization_fi_lib)
 
 add_executable(verbalize_test_fi nodes/tester.cpp)
 target_link_libraries(verbalize_test_fi ${catkin_LIBRARIES})
 add_dependencies(verbalize_test_fi ${catkin_EXPORTED_TARGETS})
 add_dependencies(verbalize_test_fi route_verbalization_gencpp)
-target_link_libraries(verbalize_test_fi route_verbalization_lib)
+target_link_libraries(verbalize_test_fi route_verbalization_fi_lib)
 
 add_executable(all_sentences_fi nodes/allSentences.cpp)
 target_link_libraries(all_sentences_fi ${catkin_LIBRARIES})
 add_dependencies(all_sentences_fi ${catkin_EXPORTED_TARGETS})
 add_dependencies(all_sentences_fi route_verbalization_gencpp)
-target_link_libraries(all_sentences_fi route_verbalization_lib)
+target_link_libraries(all_sentences_fi route_verbalization_fi_lib)

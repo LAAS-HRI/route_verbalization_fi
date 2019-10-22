@@ -54,6 +54,8 @@ private:
   void getRightLeftCircle(std::vector<std::string> places, std::string place, std::string& right, std::string& left);
   void setReference(sentence_req_t& req);
   void setReference(sentence_req_t& req, std::string right_place, std::string left_place);
+
+  bool translate(std::string& text);
 };
 
 #endif

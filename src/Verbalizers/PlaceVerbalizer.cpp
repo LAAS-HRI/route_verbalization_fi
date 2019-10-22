@@ -3,6 +3,9 @@
 #include <iostream>
 #include <random>
 
+#include "ros/ros.h"
+#include "dialogue_translator/Translate.h"
+
 PlaceVerbalizer::PlaceVerbalizer(OntologyManipulator* onto) : onto_(onto), sentences(onto_)
 {
   word_map["elevator"] = "take the ";
@@ -68,6 +71,13 @@ bool PlaceVerbalizer::verbalizePlaceRoute(std::vector<std::string> route, std::s
           text += tmp;
         }
       }
+    }
+
+    translate(text);
+    size_t pose;
+    while((pose = text.find("\"")) != std::string::npos)
+    {
+      text.replace(text.begin() + pose, text.begin() + pose + 1, "");
     }
 
     return true;
@@ -732,4 +742,25 @@ void PlaceVerbalizer::setReference(sentence_req_t& req, std::string right_place,
   }
   std::cout << "setReference = " << req.reference_ << " at " << req.refrence_side_ << std::endl;
   std::cout << right_place << " <=> " << left_place << std::endl;
+}
+
+bool PlaceVerbalizer::translate(std::string& text)
+{
+  std::cout << "translate !!!!!!!!!!!" << std::endl;
+  ros::NodeHandle n;
+  ros::ServiceClient client = n.serviceClient<dialogue_translator::Translate>("mummer_dialogue_translator/translate");
+  dialogue_translator::Translate srv;
+  srv.request.text = text;
+  srv.request.source_language = "english";
+  srv.request.target_language = "finnish";
+  if(client.call(srv))
+  {
+    text = srv.response.result;
+    return true;
+  }
+  else
+  {
+    std::cout << "fail to call service" << std::endl;
+    return false;
+  }
 }
