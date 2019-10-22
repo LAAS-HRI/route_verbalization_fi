@@ -54,7 +54,7 @@ go through the door . take the stair at the left and turn left . go almost at th
 
 To test the verbalization by automatically querying the semantic_route_description, launch the file `test.launch` :
 ```
-$ roslaunch route_verbalization test.launch
+$ roslaunch route_verbalization_fi test.launch
 ```
 Then call the service `testRegion` or `testPlace` :
 ```
@@ -63,13 +63,6 @@ to: 'gf_toilets'
 persona: 'lambda'
 signpost: false"
 
-```
-
-### Verification
-
-To check the consistency of your semantic description of the environment, you can execute the `draw_route` node which will generate images representing each corridor and open space with the elements along them:
-```
-$ rosrun route_verbalization draw_route
 ```
 
 [Ontologenius-Dependency-Image]: https://img.shields.io/badge/dependencies-ontoloGenius-1eb0fc.svg
