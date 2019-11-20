@@ -374,6 +374,9 @@ bool Sentences::replace(std::string& text, sentence_req_t& req)
       if(onto_->individuals.isA(req.reference_, "pathIntersection"))
         return false;
 
+      if(!onto_->individuals.isA(req.reference_, "shop"))
+        return false;
+
       std::string name = onto_->individuals.getName(req.reference_);
       if(onto_->individuals.isA(req.reference_, "interface"))
         name = "the " + name;
