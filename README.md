@@ -65,7 +65,7 @@ signpost: false"
 
 ```
 
-[Ontologenius-Dependency-Image]: https://img.shields.io/badge/dependencies-ontoloGenius-1eb0fc.svg
+[Ontologenius-Dependency-Image]: https://img.shields.io/badge/dependencies-ontologenius-1eb0fc.svg
 [Ontologenius-Dependency-Url]: https://github.com/sarthou/ontologenius
 [Description-Dependency-Image]: https://img.shields.io/badge/dependencies-semantic_route_description-1eb0fc.svg
 [Description-Dependency-Url]: https://github.com/LAAS-HRI/semantic_route_description

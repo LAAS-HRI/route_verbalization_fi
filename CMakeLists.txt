@@ -15,7 +15,7 @@ find_package(catkin REQUIRED COMPONENTS
   semantic_route_description
   dialogue_translator
 )
-find_package(ontologenius 0.1.3 REQUIRED)
+find_package(ontologenius 0.2.7 REQUIRED)
 find_package(OpenCV REQUIRED)
 
 ## System dependencies are found with CMake's conventions
@@ -63,7 +63,7 @@ include_directories(
  include
   ${catkin_INCLUDE_DIRS}
   ${OpenCV_INCLUDE_DIRS}
-  ${ontoloGenius_lib_INCLUDE_DIRS}
+  ${ontologenius_lib_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
