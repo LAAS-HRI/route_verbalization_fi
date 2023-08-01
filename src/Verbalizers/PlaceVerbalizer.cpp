@@ -6,7 +6,7 @@
 #include "ros/ros.h"
 #include "dialogue_translator/Translate.h"
 
-PlaceVerbalizer::PlaceVerbalizer(OntologyManipulator* onto) : onto_(onto), sentences(onto_)
+PlaceVerbalizer::PlaceVerbalizer(onto::OntologyManipulator* onto) : onto_(onto), sentences(onto_)
 {
   word_map["elevator"] = "take the ";
   word_map["stair"] = "take the ";
